@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
   def new
   end
-  
+
   def create
     # create a new session
     # first get the user
@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:session][:password])
       # log_in (go to sessions_helper)
       log_in user
-      redirect_to "/secret_page", flash: {success: 'Connecté !'}
+      redirect_to "/club", flash: {success: 'Connecté !'}
     else
       redirect_to "/login", flash: { danger: 'Mauvaise combinaison email/mot de passe. Essayez de nouveau'}
     end

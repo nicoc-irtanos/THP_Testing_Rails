@@ -1,0 +1,29 @@
+<h1>S'inscrire</h1>
+<br>
+<%= form_for(@user) do |f| %>
+  <%= f.label :prénom %>
+  <br>
+  <%= f.text_field :first_name, placeholder: "Jean" , class: 'form-control'%>
+  <br>
+  <%= f.label :nom %>
+  <br>
+  <%= f.text_field :last_name, placeholder: "Dupont" , class: 'form-control'%>
+  <br>
+  <%= f.label :email %>
+  <br>
+  <%= f.email_field :email, placeholder: "exemple@exemple.com" , class: 'form-control'%>
+  <small>Max 255 caractères</small>
+  <br>
+  <%= f.label :password %>
+  <br>
+  <%= f.password_field :password, placeholder: "Mot de passe" , class: 'form-control'%>
+  <small>Entre 6 et 40 caractères</small>
+  <br>
+  <%= f.label :password_confirmation, "Confirmation" %>
+  <br>
+  <%= f.password_field :password_confirmation, placeholder: "Confirmer mot de passe" , class: 'form-control'%>
+  <small>Les mots de passe doivent correspondre</small>
+  <br>
+  <br>
+  <%= f.submit "Créer mon compte", class: "btn btn-primary" %>
+<% end %>

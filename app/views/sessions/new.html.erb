@@ -1,0 +1,13 @@
+<h1>Se connecter</h1>
+<br>
+<%= form_for(:session, url: login_path) do |f| %>
+  <%= f.label :Email %>
+  <%= f.email_field :email, class: 'form-control' %>
+  <br>
+  <br>
+  <%= f.label :Password %>
+  <%= f.password_field :password, class: 'form-control' %>
+  <br>
+  <br>
+  <%= f.submit "Log in", class: "btn btn-primary" %>
+<% end %>
