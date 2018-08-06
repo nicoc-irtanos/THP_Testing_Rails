@@ -1,9 +1,15 @@
-<%= @user.email %>
+<p>Prénom  : <%= @user.first_name %></p>
+<br>
+<br>
+<p>Nom : <%= @user.last_name %></p>
+<br>
+<br>
+<p>Email : <%= @user.email %></p>
+<br>
 <%= form_for @user, method: :put do |f| %>
   <%= f.submit "Editer mon compte", class: "btn btn-primary" %>
 <% end %>
+<br>
 <%= form_for @user, method: :delete do |f| %>
   <%= f.submit "Supprimer mon compte", class: "btn btn-primary" %>
 <% end %>
-
-  
