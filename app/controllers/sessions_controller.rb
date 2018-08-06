@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
     # if user isn't nil and if the password is correct
     if user && user.authenticate(params[:session][:password])
       # log_in (go to sessions_helper)
-      log_in user
+      log_in(user)
       redirect_to "/club", flash: {success: 'Connecté !'}
     else
       redirect_to "/login", flash: { danger: 'Mauvaise combinaison email/mot de passe. Essayez de nouveau'}

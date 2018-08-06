@@ -14,7 +14,7 @@ class UsersController < ApplicationController
       # Handle a successful save.
       redirect_to("/users/" + @user.id.to_s)
       flash.now[:success] = "Profil utilisateur créé"
-      log_in @user
+      log_in(@user)
     else
       render 'new'
       # i don't think this flash[:fail] is used
