@@ -1,24 +1,27 @@
-# README
+# Testing on Rails
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+By Nicolas Culerier et Nicolas Zhao. Des tests en série, pétages de câble absolus au codage...
 
-Things you may want to cover:
+## Prérequis
 
-* Ruby version
+Ruby Version : 2.5.1
 
-* System dependencies
+Rails Version : 5.2.0
 
-* Configuration
+## Déploiement en local
 
-* Database creation
+```git clone``` https://github.com/nicoc-irtanos/THP_Testing_Rails
 
-* Database initialization
+```cd THP_Testing_Rails```
 
-* How to run the test suite
+```rails db:create```
 
-* Services (job queues, cache servers, search engines, etc.)
+```rails db:migrate```
 
-* Deployment instructions
+```rails db:seed```
 
-* ...
+```rails test```
+
+Le lien Heroku (mais bon c'est pas ça qui va te faire tester les tests) :
+
+https://app-testing-club-nicoc-nicoz.herokuapp.com/

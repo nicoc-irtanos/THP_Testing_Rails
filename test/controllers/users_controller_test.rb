@@ -15,7 +15,8 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
 
   test "ça marche" do
     get '/users/new'
-    post '/users', params: { user: { first_name: "nico", last_name: "nico", email: " n.z33123314@gmail.fr  ", password: "woofoo" } }
+    post '/users', params: { user: { first_name: "nico", last_name: "nico", email: "n.z33123314@gmail.fr", password: "woofoo", password_confirmation: "woofoo" } }
+    follow_redirect!
     assert_not_nil flash[:success], "un truc marche pas dans la création de l'utilisateur"
   end
 end
