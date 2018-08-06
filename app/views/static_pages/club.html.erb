@@ -1,0 +1,10 @@
+<html>
+<h1>Le club</h1>
+
+<p>Voici tous les membres du club :</p>
+<br>
+<% @users.each do |user|%>
+  <li>
+    user.first_name user.last_name, <%= link_to "Profile", user_path %>
+  </li>
+</html>

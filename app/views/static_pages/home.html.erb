@@ -1,0 +1,14 @@
+<html>
+<h1>Le site du club</h1>
+
+<% if logged_in? %>
+  <p> Hey, accède au club <a href="/club">ici</a></p>
+  
+<% else %>
+
+  <p>Yo, si tu veux faire partie du club et savoir qui d'autre en fait partie il faut <a href="/users/new">t'inscrire</a></p>
+  <br>
+  <p>Déjà inscrit ? <a href="/login">Connecte-toi</a></p>
+
+  <% end %>
+</html>
