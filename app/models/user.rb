@@ -12,4 +12,9 @@ class User < ApplicationRecord
   validates :password, presence: true,
                        confirmation: {message: "Les mots de passe ne correspondent pas"},
                        length: { in: 6..40, message: "Rentrez un mot de passe entre 6 et 40 caractères" }
+  def User.digest(string)
+    cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
+                                                  BCrypt::Engine.cost
+    BCrypt::Password.create(string, cost: cost)
+  end                    
 end
