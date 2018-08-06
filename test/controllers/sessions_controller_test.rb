@@ -16,16 +16,14 @@ class SessionsControllerTest < ActionDispatch::IntegrationTest
     assert_not logged_in?, "un utilisateur non existant a réussi à se logger"
   end
   test "navbar logged" do
-  
   get login_path
   # usr = User.order("RANDOM()").first
   usr = User.find_by(email: "n.zhao@hotmail.fr")
-  puts usr
-  puts usr.class
   post login_path, params:{session: {id: usr.id, email: usr.email, password: "loliloli"}}
   follow_redirect!
   get root_url
-  assert_select '<a class="nav-link" href="/club">Club</a>', 'Club'
+  assert_select 'a[href="/club"]'
+  assert_select 'a[href=?]', user_path(usr)
   end
 
   test "navbar unlogged" do
