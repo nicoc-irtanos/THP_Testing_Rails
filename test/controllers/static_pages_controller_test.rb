@@ -6,4 +6,7 @@ class StaticPagesControllerTest < ActionDispatch::IntegrationTest
     assert_select("a[href='/login']")
     assert_select("a[href='/users/new']")
   end
+
+  test "club page logged" do
+    get
 end
