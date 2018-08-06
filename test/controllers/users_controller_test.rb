@@ -19,4 +19,9 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     follow_redirect!
     assert_not_nil flash[:success], "un truc marche pas dans la création de l'utilisateur"
   end
+
+  test "show profile" do
+    get "/users/3"
+    assert_select "p", 3
+  end
 end
