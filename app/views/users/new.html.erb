@@ -1,6 +1,7 @@
 <h1>S'inscrire</h1>
 <br>
 <%= form_for(@user) do |f| %>
+  <%= render "shared/error" %>
   <%= f.label :prénom %>
   <br>
   <%= f.text_field :first_name, placeholder: "Jean" , class: 'form-control'%>
