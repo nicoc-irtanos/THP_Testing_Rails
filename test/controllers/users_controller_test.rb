@@ -16,6 +16,6 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
       test "ça marche" do
         get '/users/new'
         post '/users', params:{user: {first_name: "nico", last_name: "nico", email: " n.zhao333123314@gmail.fr  ", password: "woofoo"}}
-        assert flash.empty?, "un truc marche pas dansla création"
+        assert_not flash[:success], "un truc marche pas dansla création"
         end
   end
