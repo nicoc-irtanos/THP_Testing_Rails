@@ -4,18 +4,18 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
   test "email utilisé" do
     get '/users/new'
     post '/users', params: {user: {email: "n.zhao@hotmail.fr"}}
-      assert_not flash.empty?, "email utilisé"
+      assert flash[:danger], "email utilisé"
     end
 
     test "vide params" do
       get '/users/new'
       post '/users', params:{user: {first_name: "", last_name: "", email: "   "}}
-        assert_not flash.empty?, "champs vides"
+        assert flash[:danger], "champs vides"
       end
 
       test "ça marche" do
         get '/users/new'
-        post '/users', params:{user: {first_name: "nico", last_name: "nico", email: " n.zhao333123314@gmail.fr  ", password: "woofoo"}}
-        assert_not flash[:success], "un truc marche pas dansla création"
+        post '/users', params:{user: {first_name: "nico", last_name: "nico", email: " n.z33123314@gmail.fr  ", password: "woofoo"}}
+        assert flash[:success], "un truc marche pas dansla création"
         end
   end
