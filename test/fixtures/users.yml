@@ -9,3 +9,9 @@ jean:
   last_name: Culerier
   email: jean@sabug.com
   password_digest: <%= User.digest('irtanos') %>
+
+nico:
+  first_name: Nicolas
+  last_name: Zhao
+  email: n.zhao@hotmail.fr
+  password_digest: <%= User.digest('loliloli') %>
