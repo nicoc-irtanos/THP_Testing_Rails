@@ -11,13 +11,10 @@
 
   <body>
   <header class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container">
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <%= link_to "Accueil", root_path, id: "logo" %>
     <nav>
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "A propos" , about_path %></li>
-        <li><%= link_to "Contact" , contact_path %></li>
-        <li><%= link_to "Aide", help_path %></li>
         <% if logged_in? %>
           <li><%= link_to "Users", '#' %></li>
           <li class="dropdown">
