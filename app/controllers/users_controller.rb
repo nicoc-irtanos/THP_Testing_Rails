@@ -41,6 +41,7 @@ class UsersController < ApplicationController
     end
   end
 
-  def delete
+  def destroy
+    @user.delete
   end
 end

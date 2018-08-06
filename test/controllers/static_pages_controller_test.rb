@@ -8,5 +8,7 @@ class StaticPagesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "club page logged" do
-    get
+    get club_path
+    assert_redirected_to login_path
+  end
 end

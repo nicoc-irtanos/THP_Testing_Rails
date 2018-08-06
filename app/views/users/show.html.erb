@@ -1,1 +1,9 @@
 <%= @user.email %>
+<%= form_for @user, method: :put do |f| %>
+  <%= f.submit "Editer mon compte", class: "btn btn-primary" %>
+<% end %>
+<%= form_for @user, method: :delete do |f| %>
+  <%= f.submit "Supprimer mon compte", class: "btn btn-primary" %>
+<% end %>
+
+  
