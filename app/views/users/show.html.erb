@@ -7,7 +7,6 @@
 <p>Email : <%= @user.email %></p>
 <br>
 <%= link_to "Editer mon compte", edit_user_path, class: "btn btn-primary" %>
-<%= form_for @user, method: :delete do |f| %>
 <br>
-  <%= f.submit "Supprimer mon compte", class: "btn btn-primary" %>
-<% end %>
+<br>
+<%= link_to "Supprimer mon compte", @user, class: "btn btn-primary", method: :delete %>

@@ -21,21 +21,14 @@ class UsersController < ApplicationController
     end
   end
 
-
-  private
-  def user_params
-    params.require(:user).permit(:first_name, :last_name, :email, :password,
-                                 :password_confirmation)
-  end
-
   def edit
     @user = current_user
     # if no user logged
     if @user == nil
       redirect_to login_path
-    # go to edit page
+      # go to edit page
     elsif @user.id == params[:id].to_i
-    # else case are wrong users
+      # else case are wrong users
     else
       redirect_to login_path
     end
@@ -45,5 +38,11 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @user.destroy
     redirect_to root_path
+  end
+
+  private
+  def user_params
+    params.require(:user).permit(:first_name, :last_name, :email, :password,
+                                 :password_confirmation)
   end
 end
